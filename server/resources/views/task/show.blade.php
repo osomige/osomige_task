@@ -8,11 +8,11 @@
 </head>
 <body>
     <h1>タスク詳細</h1>
-        <p>【タイトル】<br>{{ $task->title}}</p> 
-        <p>【内容】<br>{{ $task->body}}</p>
-        
-    <a href="/tasks"> <input type="submit" value="一覧に戻る"></a>
-    <a href="/tasks/{{ $task->id}}/edit"> <input type="submit" value="編集する"></a>
+    <p>【タイトル】<br>{{ $task->title}}</p> 
+    <p>【内容】<br>{{ $task->body}}</p>
+
+    <a href="/tasks"><button>一覧に戻る</button></a>
+    <a href="/tasks/{{ $task->id}}/edit"><button>編集する</button></a>
     <form action="/tasks/{{ $task->id }}" method="post" style="display: inline">
         @csrf
         @method('DELETE')

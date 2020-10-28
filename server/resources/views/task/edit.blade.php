@@ -20,22 +20,22 @@
                 </ul>
             </div>
         @endif
-    <form action="/tasks/{{ $task->id }}" method="post">
+    <form action="/tasks/{{ $task->id }}" method="post" >
         @csrf
         @method('PUT')
         <input type="hidden" name="id" value={{ $task->id }}>
-        
+
             <p>編集タイトル<br>
                 <input type="string" name="title" value="{{ $task->title }}">
             </p>
             <p>本文<br>
                 <textarea type="text" name="body" value="{{ $task->body }}"></textarea>
             </p>
+            <input type="submit" value="更新" style="display: inline">
 
-        <input type="submit" value="更新" style="display: inline">
-        <a href="/tasks"> <input type="submit" value="一覧に戻る" ></a>
-
-    </form>
+            
+        </form>
+    <a href="/tasks/{{ $task->id }}"> <input type="submit" value="詳細に戻る" style="display: inline" ></a>
 
 </body>
 </html>
