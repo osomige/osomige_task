@@ -35,11 +35,11 @@
         @csrf
         <p>
             タイトル<br>
-            <input type="string" name="title" value="{{ old('title')}}">
+            <input type="text" name="title" value="{{ old('title')}}">
         </p>
         <p>
             本文<br>
-            <textarea type="text" name="body" value="{{ old('body') }}"></textarea>
+            <textarea name="body" value="{{ old('body') }}"></textarea>
         </p>
         <input type="submit" value="Create Task">
     </form>
